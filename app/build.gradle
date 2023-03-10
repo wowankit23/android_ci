@@ -31,7 +31,12 @@ android {
         jvmTarget = '1.8'
     }
     lintOptions {
-        abortOnError false
+        baseline file("lint-baseline.xml")
+        checkDependencies true
+        ignoreTestSources true
+        warningsAsErrors true
+        warning 'LintBaseline'
+        lintConfig file("lint.xml")
     }
 }
 

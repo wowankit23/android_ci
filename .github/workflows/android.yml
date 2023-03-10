@@ -20,12 +20,17 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    lint:
-      -name Lint
-       run: ./gradlew lint
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
 
-      -name: Upload html test report
-       uses: actions/upload-artifacts@v2
-       with
-       name: index.html
-       path: app/build/reports/lint-results-debug.html
+      - name: Run lint
+        run: ./gradlew lintDebug
+
+      - name: Upload html test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint.html
+          path: app/build/reports/lint-results-debug.html
