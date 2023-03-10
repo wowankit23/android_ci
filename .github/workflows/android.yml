@@ -21,8 +21,8 @@ jobs:
         cache: gradle
 
     lint:
-      -name Run Lint
-       run: ./gradlew lintDebug
+      -name Lint
+      run: ./gradlew app:lintDebug
 
       -name: Upload html test report
        uses: actions/upload-artifacts@v2
