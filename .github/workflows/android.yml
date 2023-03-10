@@ -35,7 +35,7 @@ jobs:
           name: lint.html
           path: app/build/reports/lint-results-debug.html
 
-    apk:
+  apk:
       name: Generate APK
       needs: test
       runs-on: ubuntu-latest
