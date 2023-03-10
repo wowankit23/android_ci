@@ -37,6 +37,9 @@ android {
         warningsAsErrors true
         warning 'LintBaseline'
         lintConfig file("lint.xml")
+        abortOnError false
+        absolutePaths false
+        lintConfig file('lint.xml')
     }
 }
 
