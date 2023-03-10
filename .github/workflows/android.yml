@@ -22,7 +22,7 @@ jobs:
 
     lint:
       -name Lint
-      run: ./gradlew lint
+       run: ./gradlew lint
 
       -name: Upload html test report
        uses: actions/upload-artifacts@v2
