@@ -58,9 +58,11 @@ jobs:
             
             # Create APK Release
       - name: Build apk release project (APK) - ${{ env.main_project_module }} module
+        uses: actions/setup-java@v1
         run: ./gradlew assemble
 
       - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
+        uses: actions/setup-java@v1
         run: ./gradlew ${{ env.main_project_module }}:bundleRelease
 
 
